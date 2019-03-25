@@ -1,4 +1,4 @@
-Чтобы настроить клиент сделай следующее:
+To configure the client, do the following:
 * DotNet client
     - read src\main\dotNet\Readme.txt
 * Python client
@@ -7,31 +7,31 @@
 * JS client
     - read src\main\javascript\README.txt
 * Java client
-    - установи Java (JDK 7 или 8)
-    - установи Maven3
-    - импортируй текущий проект как Maven project в Intellij Idea (Eclipse не рекомендуется)
-    - если нет интернета и не будет хватать engine dependency
-        = на странице http://host/codenjoy-contest/help можно скачать zip с этим dependency
-            ~ тут host
-                = server_ip:8080 для игры с сервером поднятым в локальной сети
-                = codenjoy.com для игры с общим сервером размещенным в интернете
-        = там же есть инструкции по игре
-    - в классе .\src\main\java\com\codenjoy\dojo\<game_package>\client\YourSolver.java
-        = впиши имейл с которым ты регистрировался на сервере в константу USER_NAME
-        = напиши свою логику в методе
+    - install Java (JDK 7 or 8)
+    - install Maven3
+    - import the current project as a Maven project into Intellij Idea (Eclipse is not recommended)
+    - if there is no internet and engine dependency will not suffice
+        = on the page http://host/codenjoy-contest/help you can download the zip with this dependency
+            ~ here is host
+                = server_ip:8080 for playing with the server raised on the local network
+                = codenjoy.com to play with a shared server hosted on the Internet
+        = there are also instructions for the game
+    - in class .\src\main\java\com\codenjoy\dojo\<game_package>\client\YourSolver.java
+        = enter the email with which you registered on the server in the constant USER_NAME
+        = write your logic in the method
             public String get(Board board) {
-        = запусти YourSolver класс как main метод
-            ~ обрати внимание, что для игры с локальным сервером в main методе стоит расскоментировать строчку
+        = run YourSolver class as main method
+            ~ note that for a game with a local server in the main method, you should uncomment the line
                 WebSocketRunner.runOnServer("192.168.1.1:8080", // to use for local server
-            ~ указать IP сервера
-            ~ и закомментировать строчку для подключения к удаленному серверу
+            ~ specify server IP
+            ~ and comment out the line for connecting to a remote server
                 WebSocketRunner.run(WebSocketRunner.Host.REMOTE, // to use for codenjoy.com server
-        = загляни на http://host/codenjoy-contest/board/game/<game_name>
-          твой бот должен был начать двигаться
-        = перезапусти процесс, если сделал изменения
-            ~ внимание! только один YourSolver за раз можно запустить - следи за этим
-    - в классе .\src\main\java\com\codenjoy\dojo\<game_package>\client\Board.java
-        = можешь дополнять воспомагательные методы для парсинга борды из строки
-    - В тестовом пакете .\src\test\java\com\codenjoy\dojo\<game_package>\client
-        = можешь размещать свои тесты
+        = Check out http://host/codenjoy-contest/board/game/<game_name>
+          your bot was supposed to start moving
+        = restart the process if you made changes
+            ~ attention! only one YourSolver can be launched at a time - watch it
+    - in class .\src\main\java\com\codenjoy\dojo\<game_package>\client\Board.java
+        = you can complement the help methods for parsing boards from the string
+    - In the test package .\src\test\java\com\codenjoy\dojo\<game_package>\client
+        = you can post your tests
     - Codenjoy!
